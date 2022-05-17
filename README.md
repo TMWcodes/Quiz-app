@@ -10,5 +10,12 @@ Step 3: add css and js files and include on html file
 Step 4: styles.css - set box sizing to be boarder box and add font family
 Step 5: styles.css - add body style, colors for correct and wrong.
 Step 6: styles.css - style container
+
+
+...
+Create functions
+startGame
+setNextQuestion 
+selectAnswer
 # references 
 Youtube, 2022. Introduction to Classes and IDs in HTML. [video] Available at: <https://www.youtube.com/watch?v=wXUhTZpF_HQ&ab_channel=DaniKrossing> [Accessed 12 May 2022].
