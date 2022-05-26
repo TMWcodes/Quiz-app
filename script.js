@@ -9,7 +9,6 @@ let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-    console.log('Started')
     //hides after clicking
     startButton.classList.add('hide')
     //randomize questions
@@ -51,7 +50,28 @@ function resetState() {
 
 
 function selectAnswer(e) {
+    //the button click on and weather it is correct
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    //answerButtons.children returning a live collection, convert to array
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+}
 
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 const questions = [
