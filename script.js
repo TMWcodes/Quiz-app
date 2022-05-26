@@ -10,7 +10,7 @@ startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
     //increment to next question
     currentQuestionIndex++
-    selectNextQuestion()
+    setNextQuestion()
 })
 
 function startGame() {
@@ -64,11 +64,11 @@ function selectAnswer(e) {
         setStatusClass(button, button.dataset.correct)
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
-} else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
-}
+        nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
 }
 
 function setStatusClass(element, correct) {
@@ -91,6 +91,22 @@ const questions = [
         answers: [
             { text: 'right', correct: true},
             { text: 'wrong', correct: false}
+        ]
+    },
+    { 
+        question: 'who is -?',
+        answers: [
+            { text: 'person a', correct: true},
+            { text: 'person b', correct: false}
+        ]
+    },
+    {
+        question: 'where is -?',
+        answers: [
+            { text: 'north', correct: true},
+            { text: 'south', correct: false},
+            { text: 'east', correct: false},
+            { text: 'west', correct: false}
         ]
     }
 ]
